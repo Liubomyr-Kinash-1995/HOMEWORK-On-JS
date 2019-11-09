@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>onmousemove event example</title>
+	<meta charset="utf-8" />
+	<meta name="AUTHOR" content="Dottoro">
+	<meta name="ROBOTS" content="noindex">
+	<script type="text/javascript" src="http://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js" nonce="E1E1B345FDC43E48A9408569B1457969" charset="UTF-8"></script><style>
+		#flying {
+			position: fixed; 
+		}
+	</style>
+<!--[if lte IE 6]> 
+	<style>
+		#flying {
+			position: absolute; /* ie6 does not support fixed position */
+		}
+	</style>
+<![endif]--> 
+
+    <script type="text/javascript">
+        function UpdateFlyingObj (event) {
+			var mouseX = Math.round (event.clientX);
+			var mouseY = Math.round (event.clientY);
+
+			var flyingObj = document.getElementById ("flying");
+			flyingObj.style.left = mouseX + "px";
+			flyingObj.style.top = mouseY + "px";
+
+        }
+    </script>
+</head>
+<body onmousemove="UpdateFlyingObj (event);">
+	<div>
+		<table cellpadding="0px" cellspacing="0px" style="width:100%">
+			<tr>
+				<td height="30" align="center" style="background-color:#ffffff; border-bottom:1px solid #000000; padding-bottom:5px;">
+					<span style="font-size:20px;">onmousemove event example</span>
+				</td>
+			</tr>
+			<tr height="230">
+				<td align="center" valign="middle" style="padding-top:15px; padding-bottom:10px;">
+	<div style="height:1000px;">The flying object also works for document scrolling.</div>
+
+	<img id="flying" src="/external/examples/common/images/flying.gif" />
+				</td>
+			</tr>
+			<tr>
+				<td align="center" class="copyright">
+					<a target="_blank" rel="nofollow" href="http://www.dottoro.com/tou.php">&copy; 2011 Dottoro.com. All rights reserved. Terms of use.</a>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
